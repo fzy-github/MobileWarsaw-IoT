@@ -39,7 +39,7 @@ final class SensorListViewModel: NSObject {
             return
         }
         
-        scanTask = centralManager.scanForPeripherals(withServices: [moistureServiceUUID])
+        scanTask = centralManager.scanForPeripherals(withServices: nil)
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] discovery in
                 guard let self = self else { return }

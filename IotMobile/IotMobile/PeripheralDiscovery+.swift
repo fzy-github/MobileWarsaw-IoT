@@ -18,4 +18,8 @@ extension PeripheralDiscovery: @retroactive Hashable {
         hasher.combine(advertisementData.manufacturerData)
     }
     
+    
+    var isMoistureSensor: Bool {
+        advertisementData.serviceUUIDs?.contains(moistureServiceUUID) ?? false
+    }
 }
